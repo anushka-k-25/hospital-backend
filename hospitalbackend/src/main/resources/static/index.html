@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Hospital Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="main-container">
+
+    <!-- SIDEBAR -->
+
+    <div class="sidebar">
+
+        <h2 class="logo">
+            HMS
+        </h2>
+
+        <ul>
+
+            <li class="active">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </li>
+
+            <li>
+                <i class="fa-solid fa-user-injured"></i>
+                Patients
+            </li>
+
+            <li>
+                <i class="fa-solid fa-user-doctor"></i>
+                Doctors
+            </li>
+
+            <li>
+                <i class="fa-solid fa-bed"></i>
+                Rooms
+            </li>
+
+            <li>
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                Billing
+            </li>
+
+            <li>
+                <i class="fa-solid fa-calendar-check"></i>
+                Appointments
+            </li>
+
+        </ul>
+
+    </div>
+
+    <!-- MAIN CONTENT -->
+
+    <div class="content">
+
+        <!-- TOPBAR -->
+
+        <div class="topbar">
+
+            <h1>
+                Hospital Management System
+            </h1>
+
+            <div class="admin">
+
+                <i class="fa-solid fa-user"></i>
+                Receptionist
+
+            </div>
+
+        </div>
+
+        <!-- DASHBOARD CARDS -->
+
+        <div class="cards">
+
+            <div class="card">
+
+                <i class="fa-solid fa-user-injured"></i>
+
+                <div>
+
+                    <h2 id="totalPatients">0</h2>
+
+                    <p>Total Patients</p>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-bed"></i>
+
+                <div>
+
+                    <h2>24</h2>
+
+                    <p>Available Rooms</p>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-user-doctor"></i>
+
+                <div>
+
+                    <h2>12</h2>
+
+                    <p>Doctors</p>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-truck-medical"></i>
+
+                <div>
+
+                    <h2>5</h2>
+
+                    <p>Emergency Cases</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- FORM SECTION -->
+
+        <div class="form-section">
+
+            <h2>
+                Add New Patient
+            </h2>
+
+            <div class="form-container">
+
+                <input type="number"
+                       id="patientId"
+                       placeholder="Patient ID">
+
+                <input type="text"
+                       id="patientName"
+                       placeholder="Patient Name">
+
+                <input type="text"
+                       id="patientType"
+                       placeholder="Patient Type">
+
+                <input type="text"
+                       id="roomNumber"
+                       placeholder="Room Number">
+
+                <input type="text"
+                       id="doctorName"
+                       placeholder="Doctor Name">
+
+                <input type="text"
+                       id="specialization"
+                       placeholder="Specialization">
+
+            </div>
+
+            <button class="add-btn"
+                    onclick="addPatient()">
+
+                <i class="fa-solid fa-plus"></i>
+                Add Patient
+
+            </button>
+
+        </div>
+
+        <!-- TABLE SECTION -->
+
+        <div class="table-section">
+
+            <div class="table-header">
+
+                <h2>
+                    Patient Records
+                </h2>
+
+                <input type="text"
+                       id="searchInput"
+                       placeholder="Search patient...">
+
+            </div>
+
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>ID</th>
+
+                    <th>Name</th>
+
+                    <th>Type</th>
+
+                    <th>Room</th>
+
+                    <th>Doctor</th>
+
+                    <th>Specialization</th>
+
+                    <th>Action</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody id="patientTableBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
