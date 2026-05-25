@@ -1,6 +1,6 @@
 package com.example.hospitalbackend.controller;
 
-import com.example.hospitalbackend.model.Patient;
+import com.example.hospitalbackend.entity.Patient;
 import com.example.hospitalbackend.repository.PatientRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
