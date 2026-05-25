@@ -1,6 +1,6 @@
 package com.example.hospitalbackend.controller;
 
-import com.example.hospitalbackend.entity.Patient;
+import com.example.hospitalbackend.model.Patient;
 import com.example.hospitalbackend.repository.PatientRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,35 +9,42 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/patients")
+
+@CrossOrigin("*")
+
 public class PatientController {
 
     @Autowired
-    PatientRepository repo;
+    PatientRepository repository;
 
-    // ================= SAVE PATIENT =================
+    // ================= GET ALL PATIENTS =================
 
-    @PostMapping("/addPatient")
+    @GetMapping
+
+    public List<Patient> getAllPatients() {
+
+        return repository.findAll();
+    }
+
+    // ================= ADD PATIENT =================
+
+    @PostMapping
+
     public Patient addPatient(
             @RequestBody Patient patient) {
 
-        return repo.save(patient);
-    }
-
-    // ================= DISPLAY PATIENTS =================
-
-    @GetMapping("/patients")
-    public List<Patient> getPatients() {
-
-        return repo.findAll();
+        return repository.save(patient);
     }
 
     // ================= DELETE PATIENT =================
 
-    @DeleteMapping("/deletePatient/{id}")
+    @DeleteMapping("/{id}")
+
     public String deletePatient(
             @PathVariable int id) {
 
-        repo.deleteById(id);
+        repository.deleteById(id);
 
         return "Patient Deleted";
     }
